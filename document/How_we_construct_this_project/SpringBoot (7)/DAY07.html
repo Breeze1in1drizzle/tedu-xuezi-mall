@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DAY07</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h3>23. 用户-上传头像-界面</h3>
+<p>关于前端界面的处理，由于服务器端依然是将响应JSON数据，则前端还是应该通过AJAX发出异步请求，然后获取JSON数据，并处理结果。</p>
+<p>相对传统的AJAX访问，关于文件上传时，区别在于：</p>
+<ul>
+<li>
+<p>提交到服务器端的数据应该是：<code>new FormData($(&quot;#form-change-avatar&quot;)[0])</code></p>
+</li>
+<li>
+<p>必须配置<code>&quot;contentType&quot;:false,</code>和<code>&quot;processData&quot;:false,</code></p>
+</li>
+</ul>
+<p>完整代码例如：</p>
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+$(&quot;#btn-change-password&quot;).click(function(){
+    $.ajax({
+        &quot;url&quot;:&quot;/users/change_password&quot;,
+        &quot;data&quot;:$(&quot;#form-change-password&quot;).serialize(),
+        &quot;type&quot;:&quot;POST&quot;,
+        &quot;dataType&quot;:&quot;json&quot;,
+        &quot;success&quot;:function(json) {
+            if (json.state == 200) {
+                alert(&quot;修改成功！&quot;);
+                $(&quot;#form-change-password&quot;)[0].reset();
+            } else {
+                alert(json.message);
+            }
+        },
+        &quot;error&quot;:function() {
+            alert(&quot;您的登录信息已经过期，请重新登录！&quot;);
+            location.href = &quot;login.html&quot;;
+        }
+    });
+});
+&lt;/script&gt;
+</code></pre>
+
+<p>关于在前端界面显示新上传的头像，首先，请检查服务器端的控制器是否返回了头像的路径，即：</p>
+<pre><code>return new ResponseResult&lt;String&gt;(SUCCESS, avatar);
+</code></pre>
+
+<p>如果需要测试，可以在客户端通过<code>alert(json.data);</code>测试是否获取到了头像路径。</p>
+<p>如果能够正确的获取到上传的文件的路径，则通过jQuery选择器，选中显示头像的<code>&lt;img&gt;</code>标签，修改其<code>src</code>属性即可：</p>
+<pre><code>$(&quot;#img-avatar&quot;).attr(&quot;src&quot;, json.data);
+</code></pre>
+
+<p>至此，上传头像并显示新头像的功能已经完成，但是，刷新或重新打开页面时，并不会显示用户的头像图片！</p>
+<p>由于显示界面使用的是html，所以，应该将头像数据存储在cookie中，则html可以随时访问到cookie中的头像数据！</p>
+<p>关于cookie的访问，如果需要向cookie中存入数据，可以是：</p>
+<pre><code>$.cookie(&quot;username&quot;, &quot;root&quot;, {
+    expire: 7
+});
+</code></pre>
+
+<p>反之，如果需要取出cookie中的数据，则应该是：</p>
+<pre><code>$.cookie(&quot;username&quot;);
+</code></pre>
+
+<p>需要注意的是，这种使用cookie的方式是jQuery封装的函数，使用之前需要引入对应的文件：</p>
+<pre><code>&lt;script src=&quot;../bootstrap3/js/jquery.cookie.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<p>所以，需要实现“打开页面就能直接显示当前登录的用户的头像”，则应该：</p>
+<ol>
+<li>
+<p>必须保证登录时的查询(findByUsername)对应的SQL查询中，已经查询了avatar字段；</p>
+</li>
+<li>
+<p>当用户成功登录时，将头像路径存入到cookie中；</p>
+</li>
+<li>
+<p>当加载“上传头像”页面时，从cookie中取出头像路径，如果值是有效的，则显示；</p>
+</li>
+<li>
+<p>当成功上传头像后，修改cookie中存放的头像路径；</p>
+</li>
+</ol>
+<p>最后，SpringBoot项目默认已经集成了上传所需的环境和配置，并且，限制了上传的文件大小，如果上传太大的文件，则会报告错误！通常，项目中的配置，是整个项目中任何上传功能都不允许超出文件大小范围，而在控制器中，限制的是特定的某个功能的上传文件大小的范围！整个项目的上传大小应该设置为比较大的值！</p>
+<p>通常，可以在启动类中添加配置：</p>
+<pre><code>@SpringBootApplication
+@Configuration
+@MapperScan(&quot;cn.tedu.store.mapper&quot;)
+public class StoreApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(StoreApplication.class, args);
+    }
+
+    @Bean
+    public MultipartConfigElement multipartConfigration() {
+        MultipartConfigFactory mcf
+            = new MultipartConfigFactory();
+        DataSize maxFileSize = DataSize.ofBytes(100 * 1024 * 1024);
+        DataSize maxRequestSize = DataSize.ofBytes(100 * 1024 * 1024);
+        mcf.setMaxFileSize(maxFileSize);
+        mcf.setMaxRequestSize(maxRequestSize);
+        MultipartConfigElement mce
+            = mcf.createMultipartConfig();
+        return mce;
+    }
+
+}
+</code></pre>
+
+<p>注意：由于配置的代码是写在启动类中的，所以，启动类需要添加<code>@Configuration</code>注解，且配置的方法需要添加<code>@Bean</code>注解。</p>
+<p>注意：某些做法是在<code>application.properties</code>中进行配置，这种做法在某些版本中是无效的，推荐使用以上Java代码进行配置。</p>
+<h3>24. 阶段小结</h3>
+<ul>
+<li>
+<p>掌握SpringBoot的基本使用；</p>
+</li>
+<li>
+<p>理解MVC的编程理念，理解其中的各层的定位与作用，特别是Model中的Service；</p>
+</li>
+<li>
+<p>掌握异常的作用，掌握抛出、处理异常的原则，掌握统一处理异常的做法；</p>
+</li>
+<li>
+<p>掌握密码的加密；</p>
+</li>
+<li>
+<p>掌握文件上传的做法；</p>
+</li>
+</ul>
+<h3>25. 收货地址-增加收货地址-数据库与数据表</h3>
+<p>关于收货地址数据的处理，涉及：显示收货地址列表、增加收货地址、修改、删除、设为默认。</p>
+<p>开发顺序应该是：增加收货地址 &gt; 显示收货地址列表 &gt; 设为默认 &gt; 删除收货地址 &gt; 修改收货地址。</p>
+<p>创建“收货地址”的数据表：</p>
+<pre><code>CREATE TABLE t_address (
+    aid INT AUTO_INCREMENT COMMENT '收货地址的id',
+    uid INT NOT NULL COMMENT '所属用户的id',
+    name VARCHAR(20) COMMENT '收货人姓名',
+    province CHAR(6) COMMENT '省的代号',
+    city CHAR(6) COMMENT '市的代号',
+    area CHAR(6) COMMENT '区的代号',
+    district VARCHAR(50) COMMENT '省市区的名称',
+    zip CHAR(6) COMMENT '邮政编码',
+    address VARCHAR(50) COMMENT '详细地址',
+    phone VARCHAR(20) COMMENT '手机',
+    tel VARCHAR(20) COMMENT '固话',
+    tag VARCHAR(10) COMMENT '地址类型，如：家/公司/学校',
+    is_default INT COMMENT '是否默认，0-非默认，1-默认',
+    created_user VARCHAR(20) COMMENT '创建执行人',
+    created_time DATETIME COMMENT '创建时间',
+    modified_user VARCHAR(20) COMMENT '修改执行人',
+    modified_time DATETIME COMMENT '修改时间',
+    PRIMARY KEY(aid)
+) DEFAULT CHARSET=UTF8;
+</code></pre>
+
+<h3>25. 收货地址-增加收货地址-实体类</h3>
+<p>创建<code>cn.tedu.store.entity.Address</code>实体类，继承自<code>BaseEntity</code>：</p>
+<pre><code>/**
+ * 收货地址的实体类
+ */
+public class Address extends BaseEntity {
+
+    private static final long serialVersionUID = 8491523504331195543L;
+
+    private Integer aid;
+    private Integer uid;
+    private String name;
+    private String province;
+    private String city;
+    private String area;
+    private String district;
+    private String zip;
+    private String address;
+    private String phone;
+    private String tel;
+    private String tag;
+    private Integer isDefault;
+
+    // SET/GET/toString
+
+}
+</code></pre>
+
+<h3>26. 收货地址-增加收货地址-持久层</h3>
+<p><strong>1. 分析SQL语句</strong></p>
+<p>执行增加数据的SQL语句应该是：</p>
+<pre><code>INSERT INTO t_address (除了aid以外的所有字段) VALUE (对应的属性列表);
+</code></pre>
+
+<p>后续，在“增加收货地址”的业务中，可以制定规则“当用户第1次增加收货地址时，该收货地址直接是默认的，后续增加的每一条都不是默认的”，可以通过“判断当前用户有没有收货地址”来实现，表现为“查询当前用户的收货地址数据的数量”，要保证该规则的应用，还需要：</p>
+<pre><code>SELECT COUNT(aid) FROM t_address WHERE uid=?
+</code></pre>
+
+<p><strong>2. 接口与抽象方法</strong></p>
+<p>创建<code>cn.tedu.store.mapper.AddressMapper</code>接口，添加抽象方法：</p>
+<pre><code>/**
+ * 处理收货地址的持久层接口
+ */
+public interface AddressMapper {
+
+    /**
+     * 增加收货地址数据
+     * @param address 收货地址数据
+     * @return 受影响的行数
+     */
+    Integer insert(Address address);
+
+    /**
+     * 统计指定用户的收货地址数据的数量
+     * @param uid 用户的id
+     * @return 用户的收货地址数据的数量
+     */
+    Integer countByUid(Integer uid);
+
+}
+</code></pre>
+
+<p><strong>3. 配置映射</strong></p>
+<p>复制得到<code>AddressMapper.xml</code>文件，修改根节点的<code>namespace</code>属性值，然后添加以上2个抽象方法的映射的配置：</p>
+<pre><code>&lt;mapper namespace=&quot;cn.tedu.store.mapper.AddressMapper&quot;&gt;
+
+    &lt;!-- 增加收货地址数据 --&gt;
+    &lt;!-- Integer insert(Address address) --&gt;
+    &lt;insert id=&quot;insert&quot;&gt;
+        INSERT INTO t_address (
+            uid, name,
+            province, city,
+            area, district,
+            zip, address,
+            phone, tel,
+            tag, is_default,
+            created_user, created_time,
+            modified_user, modified_time
+        ) VALUE (
+            #{uid}, #{name},
+            #{province}, #{city},
+            #{area}, #{district},
+            #{zip}, #{address},
+            #{phone}, #{tel},
+            #{tag}, #{isDefault},
+            #{createdUser}, #{createdTime},
+            #{modifiedUser}, #{modifiedTime}
+        )
+    &lt;/insert&gt;
+
+    &lt;!-- 统计指定用户的收货地址数据的数量 --&gt;
+    &lt;!-- Integer countByUid(Integer uid) --&gt;
+    &lt;select id=&quot;countByUid&quot; 
+        resultType=&quot;java.lang.Integer&quot;&gt;
+        SELECT 
+            COUNT(aid) 
+        FROM 
+            t_address 
+        WHERE 
+            uid=#{uid}
+    &lt;/select&gt;
+
+&lt;/mapper&gt;
+</code></pre>
+
+<p>完成后，创建新的单元测试类<code>cn.tedu.store.mapper.AddressMapperTestCase</code>，并对以上2个方法执行测试：</p>
+<pre><code>@RunWith(SpringRunner.class)
+@SpringBootTest
+public class AddressMapperTestCase {
+
+    @Autowired
+    public AddressMapper mapper;
+
+    @Test
+    public void insert() {
+        Address address = new Address();
+        address.setUid(8);
+        address.setName(&quot;小李同学&quot;);
+        Integer rows = mapper.insert(address);
+        System.err.println(&quot;rows=&quot; + rows);
+    }
+
+    @Test
+    public void countByUid() {
+        Integer uid = 8;
+        Integer count = mapper.countByUid(uid);
+        System.err.println(&quot;count=&quot; + count);
+    }
+
+}
+</code></pre>
+
+<h3>27. 收货地址-增加收货地址-业务层</h3>
+<p><strong>1. 设计异常</strong></p>
+<p>由于此次主要执行增加数据操作，可能涉及<code>InsertException</code>。</p>
+<p>另外，还将查询某用户的数据量，但是，无论是否存在数据，都不会被视为错误操作，所以，不涉及异常。（如果增加规则“每个用户只允许创建??条收货地址”，则应该有对应的异常）</p>
+<p><strong>2. 接口与抽象方法</strong></p>
+<p>创建<code>cn.tedu.store.service.IAddressService</code>接口，并添加抽象方法：</p>
+<pre><code>void addnew(Address address, String username) 
+        throws InsertException;
+</code></pre>
+
+<p><strong>3. 实现</strong></p>
+<p>创建<code>cn.tedu.store.service.impl.AddressServiceImpl</code>类，实现以上<code>IAddressService</code>接口，添加<code>@Service</code>注解，在类中添加持久层对象<code>@Autowired private AddressMapper addressMapper;</code>。</p>
+<p>首先，将持久层中的2个方法在业务层实现类中实现为私有方法，其中，增加数据的方法需要判断其返回值，当返回值不为1时抛出异常，且该方法返回值类型为<code>void</code>。</p>
+<p>然后，重写接口中的抽象方法：</p>
+<pre><code>public void addnew(Address address, String username) throws InsertException {
+    // 查询用户的收货地址的数量：countByUid(Integer uid)，参数值来自address.getUid();
+    // 判断数量是否为0
+    // 是：当前将增加第1条收货地址，则：address.setIsDefault(1)
+    // 否：当前增加的不是第1条收货地址，则：address.setIsDefault(0)
+
+    // TODO 处理district
+
+    // 4项日志：时间是直接创建对象得到，用户名使用参数username
+
+    // 执行增加：insert(Address address);
+}
+</code></pre>
+
+<p>具体实现为：</p>
+<pre><code>/**
+ * 处理收货地址数据的业务层实现类
+ */
+@Service
+public class AddressServiceImpl implements IAddressService {
+
+    @Autowired
+    private AddressMapper addressMapper;
+
+    @Override
+    public void addnew(Address address, String username) throws InsertException {
+        // 查询用户的收货地址的数量：countByUid(Integer uid)，参数值来自address.getUid();
+        Integer count = countByUid(address.getUid());
+        // 判断数量是否为0
+        // 是：当前将增加第1条收货地址，则：address.setIsDefault(1)
+        // 否：当前增加的不是第1条收货地址，则：address.setIsDefault(0)
+        address.setIsDefault(count == 0 ? 1 : 0);
+
+        // TODO 处理district
+
+        // 4项日志：时间是直接创建对象得到，用户名使用参数username
+        Date now = new Date();
+        address.setCreatedUser(username);
+        address.setCreatedTime(now);
+        address.setModifiedUser(username);
+        address.setModifiedTime(now);
+
+        // 执行增加：insert(Address address);
+        insert(address);
+    }
+
+    /**
+     * 增加收货地址数据
+     * @param address 收货地址数据
+     */
+    private void insert(Address address) {
+        Integer rows = addressMapper.insert(address);
+        if (rows != 1) {
+            throw new InsertException(
+                &quot;增加收货地址数据时出现未知错误！&quot;);
+        }
+    }
+
+    /**
+     * 统计指定用户的收货地址数据的数量
+     * @param uid 用户的id
+     * @return 用户的收货地址数据的数量
+     */
+    private Integer countByUid(Integer uid) {
+        return addressMapper.countByUid(uid);
+    }
+
+}
+</code></pre>
+
+<p>完成后创建<code>cn.tedu.store.service.AddressServiceTestCase</code>测试类，对以上功能进行测试：</p>
+<pre><code>@RunWith(SpringRunner.class)
+@SpringBootTest
+public class AddressServiceTestCase {
+
+    @Autowired
+    public IAddressService service;
+
+    @Test
+    public void addnew() {
+        try {
+            Address address = new Address();
+            address.setUid(10);
+            address.setName(&quot;小刘同学&quot;);
+            String username = &quot;小森同学&quot;;
+            service.addnew(address, username);
+            System.err.println(&quot;OK.&quot;);
+        } catch (ServiceException e) {
+            System.err.println(e.getClass().getName());
+            System.err.println(e.getMessage());
+        }
+    }
+
+}
+</code></pre>
+
+<h3>28. 收货地址-增加收货地址-控制器层</h3>
+<p><strong>1. 处理异常</strong></p>
+<p>无，业务层没有抛出新的异常，则不需要处理。</p>
+<p><strong>2. 设计请求</strong></p>
+<pre><code>请求路径：/addresses/addnew
+请求参数：Address address, HttpSession session
+请求方式：POST
+响应数据：ResponseResult&lt;Void&gt;
+是否拦截：是，无需修改配置
+</code></pre>
+
+<p><strong>3. 处理请求</strong></p>
+<p>创建<code>cn.tedu.store.controller.AddressController</code>，继承自<code>BaseController</code>，添加<code>@RestController</code>和<code>@RequestMapping(&quot;/addresses&quot;)</code>注解，在类中声明业务层对象<code>@Autowired private IAddressService addressService;</code>。</p>
+<p>然后，添加处理请求的方法：</p>
+<pre><code>@RequestMapping(&quot;/addnew&quot;)
+public ResponseResult&lt;Void&gt; addnew(Address address, HttpSession session) {
+    // 从session中获取uid
+    // 将uid封装到address中
+    // 从session中获取username
+    // 调用业务层对象执行：addressService.addnew(address, username);
+    // 返回成功
+}
+</code></pre>
+
+<p>完成后，打开浏览器，先登录，通过<code>http://localhost:8080/addresses/addnew?name=Henry</code>进行测试。</p>
+<h3>29. 收货地址-增加收货地址-界面</h3>
+<p>与此前处理的基本一致：先复制得到ajax请求相关代码，修改按钮id、表单id、请求路径，并在HTML代码部分确定各id值，及表单中各控件的name值。</p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DAY05</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h3>16. 用户-个人资料-持久层</h3>
+<p><strong>1. 分析SQL语句</strong></p>
+<p>执行修改个人资料的SQL语句是：</p>
+<pre><code>UPDATE 
+    t_user 
+SET 
+    phone=?,email=?,
+    gender=?,
+    modified_user=?,modified_time=?
+WHERE 
+    uid=?
+</code></pre>
+
+<p>在操作数据之前，还是应该执行相关的检查，检查数据是否存在，检查是否被标记为删除，当然，这些检查可以使用已有的查询功能来完成！</p>
+<p>另外，在修改个人资料之前，还应该将当前登录的用户的资料显示在界面中，涉及的数据有：用户名、电话、邮箱、性别，则需要：</p>
+<pre><code>SELECT username,phone,email,gender FROM t_user WHERE uid=?
+</code></pre>
+
+<p>当然，根据uid查询数据的功能已经存在，只需要在其映射的SQL语句中补充查询的字段即可！</p>
+<p><strong>2. 接口与抽象方法</strong></p>
+<p>关于修改个人资料的抽象方法：</p>
+<pre><code>Integer updateInfo(User user);
+</code></pre>
+
+<p><strong>3. 配置映射</strong></p>
+<p>更新个人资料的映射：</p>
+<pre><code>&lt;!-- 更新个人资料 --&gt;
+&lt;!-- Integer updateInfo(User user) --&gt;
+&lt;update id=&quot;updateInfo&quot;&gt;
+    UPDATE 
+        t_user 
+    SET 
+        phone=#{phone},email=#{email},
+        gender=#{gender},
+        modified_user=#{modifiedUser},
+        modified_time=#{modifiedTime}
+    WHERE 
+        uid=#{uid}
+&lt;/update&gt;
+</code></pre>
+
+<p>另外，修改原有<code>findByUid</code>方法的映射，补充查询的字段：</p>
+<pre><code>&lt;!-- 根据用户id查询用户数据 --&gt;
+&lt;!-- User findByUid(Integer uid) --&gt;
+&lt;select id=&quot;findByUid&quot;
+    resultType=&quot;cn.tedu.store.entity.User&quot;&gt;
+    SELECT 
+        username, phone,
+        email, gender,
+        password, salt, 
+        is_delete AS isDelete
+    FROM 
+        t_user 
+    WHERE 
+        uid=#{uid}
+&lt;/select&gt;
+</code></pre>
+
+<p>完成后，编写并执行单元测试：</p>
+<pre><code>@Test
+public void updateInfo() {
+    User user = new User();
+    user.setUid(8);
+    user.setGender(0);
+    user.setPhone(&quot;13100131001&quot;);
+    user.setEmail(&quot;root@tedu.cn&quot;);
+    user.setModifiedUser(&quot;超级管理员&quot;);
+    user.setModifiedTime(new Date());
+    Integer rows = mapper.updateInfo(user);
+    System.err.println(&quot;rows=&quot; + rows);
+}
+</code></pre>
+
+<h3>17. 用户-个人资料-业务层</h3>
+<p><strong>1. 设计异常</strong></p>
+<p>修改个人资料之前，还是应该检查用户数据是否存在、是否被标记为删除，涉及<code>UserNotFoundException</code>，在执行更新时，涉及<code>UpdateException</code>。以上异常均已创建，无需创建新的异常。</p>
+<p><strong>2. 接口与抽象方法</strong></p>
+<pre><code>void changeInfo(User user) throws UserNotFoundException, UpdateException;
+</code></pre>
+
+<p><strong>3. 实现</strong></p>
+<p>首先，将持久层新添加的方法在业务层中实现为私有方法：</p>
+<p>然后，实现接口中新添加的抽象方法：</p>
+<pre><code>public void changeInfo(User user) throws UserNotFoundException, UpdateException {
+    // 根据user.getUid()查询用户数据
+    // 判断查询结果是否为null
+    // 是：抛出UserNotFoundException
+
+    // 判断查询结果中isDelete是否为1
+    // 是：抛出UserNotFoundException
+
+    // 向user中封装modifiedUser和modifiedTime
+    // 执行更新
+}
+</code></pre>
+
+<p>具体实现为：</p>
+<pre><code>@Override
+public void changeInfo(User user) throws UserNotFoundException, UpdateException {
+    // 根据uid查询用户数据
+    User result = findByUid(user.getUid());
+    // 判断查询结果是否为null
+    if (result == null) {
+        // 是：抛出UserNotFoundException
+        throw new UserNotFoundException(
+            &quot;修改密码失败！尝试访问的用户不存在！&quot;);
+    }
+
+    // 判断查询结果中isDelete是否为1
+    if (result.getIsDelete().equals(1)) {
+        // 是：抛出UserNotFoundException
+        throw new UserNotFoundException(
+            &quot;修改密码失败！尝试访问的用户不存在！&quot;);
+    }
+
+    // 向user中封装modifiedUser和modifiedTime
+    user.setModifiedUser(result.getUsername());
+    user.setModifiedTime(new Date());
+    // 执行更新
+    updateInfo(user);
+}
+</code></pre>
+
+<p>完成后，编写并执行单元测试：</p>
+<pre><code>@Test
+public void changeInfo() {
+    try {
+        User user = new User();
+        user.setUid(8);
+        user.setGender(1);
+        user.setPhone(&quot;13100131009&quot;);
+        user.setEmail(&quot;root@qq.com&quot;);
+        service.changeInfo(user);
+        System.err.println(&quot;OK.&quot;);
+    } catch (ServiceException e) {
+        System.err.println(e.getClass().getName());
+        System.err.println(e.getMessage());
+    }
+}
+</code></pre>
+
+<h3>18. 用户-个人资料-控制器层</h3>
+<p><strong>1. 处理异常</strong></p>
+<p>此次业务层没有抛出新的异常，则无需处理！</p>
+<p><strong>2. 设计请求</strong></p>
+<pre><code>请求路径：/users/change_info
+请求参数：User user, HttpSesion session
+请求方式：POST
+响应数据：Void
+是否拦截：是，无需修改配置，因为默认拦截 /**
+</code></pre>
+
+<p><strong>3. 处理请求</strong></p>
+<pre><code>@RequestMapping(&quot;/change_info&quot;)
+public ResponseResult&lt;Void&gt; changeInfo(User user, HttpSession session) {
+    // 封装uid
+    Integer uid = getUidFromSession(session);
+    user.setUid(uid);
+    // 执行修改个人资料
+    userService.changeInfo(user);
+    // 返回
+    return new ResponseResult&lt;&gt;(SUCCESS);
+}
+</code></pre>
+
+<p>完成后，可以通过<code>http://localhost:8080/users/change_info?phone=123456&amp;email=hello@tedu.cn&amp;gender=0</code>进行测试。</p>
+<h3>19. 用户-个人资料-界面</h3>
+<p>在“执行修改”之前，应该保证“当页面打开时就能显示当前登录的用户的信息”！</p>
+<p>这些信息应该是打开页面时就直接向服务器端发出请求，由服务器端响应时提供的！</p>
+<p>这就要求服务器提供“获取当前登录的用户的信息”功能！由于目前没有这个功能，所以需要从持久层开始开发这个功能！</p>
+<p><strong>获取当前登录的用户数据-持久层</strong></p>
+<p>直接使用已有的<code>findByUid()</code>即可！无需再次开发！</p>
+<p><strong>获取当前登录的用户数据-业务层</strong></p>
+<p>需要在<code>IUserService</code>接口中添加抽象方法：</p>
+<pre><code>User getByUid(Integer uid);
+</code></pre>
+
+<p>然后，在<code>UserServiceImpl</code>类中实现这个方法：</p>
+<pre><code>@Override
+public User getByUid(Integer uid) {
+    // 根据uid查询用户数据
+    User result = findByUid(uid);
+    // 判断查询结果是否为null
+    if (result == null) {
+        // 是：抛出UserNotFoundException
+        throw new UserNotFoundException(
+            &quot;获取用户信息失败！尝试访问的用户不存在！&quot;);
+    }
+
+    // 判断查询结果中isDelete是否为1
+    if (result.getIsDelete().equals(1)) {
+        // 是：抛出UserNotFoundException
+        throw new UserNotFoundException(
+            &quot;获取用户信息失败！尝试访问的用户不存在！&quot;);
+    }
+
+    // 在返回之前隐藏不向外提供的数据
+    result.setPassword(null);
+    result.setSalt(null);
+    result.setIsDelete(null);
+
+    // 执行返回
+    return result;
+}
+</code></pre>
+
+<p>完成后，编写并执行单元测试：</p>
+<pre><code>@Test
+public void getByUid() {
+    try {
+        Integer uid = 8;
+        User data = service.getByUid(uid);
+        System.err.println(data);
+    } catch (ServiceException e) {
+        System.err.println(e.getClass().getName());
+        System.err.println(e.getMessage());
+    }
+}
+</code></pre>
+
+<p><strong>获取当前登录的用户数据-控制器层</strong></p>
+<pre><code>@GetMapping(&quot;/info&quot;)
+public ResponseResult&lt;User&gt; getByUid(HttpSession session) {
+    // 获取uid
+    Integer uid = getUidFromSession(session);
+    // 查询用户数据
+    User data = userService.getByUid(uid);
+    // 返回
+    return new ResponseResult&lt;User&gt;(SUCCESS, data);
+}
+</code></pre>
+
+<p>完成后，在浏览器中通过<code>http://localhost:8080/users/info</code>直接访问即可测试。</p>
+<p><strong>发出请求并处理结果</strong></p>
+<p>当页面加载时，应该向服务器发出请求，获取当前登录的用户数据：</p>
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+$(document).ready(function(){
+    $.ajax({
+        &quot;url&quot;:&quot;/users/info&quot;,
+        &quot;type&quot;:&quot;GET&quot;,
+        &quot;dataType&quot;:&quot;json&quot;,
+        &quot;success&quot;:function(json) {
+            if (json.state == 200) {
+                // 将服务器响应的数据显示到各控件中
+                $(&quot;#username&quot;).val(json.data.username);
+                $(&quot;#phone&quot;).val(json.data.phone);
+                $(&quot;#email&quot;).val(json.data.email);
+
+                var genderRadio = json.data.gender == 0 
+                    ? $(&quot;#gender-female&quot;) : $(&quot;#gender-male&quot;); 
+                genderRadio.attr(&quot;checked&quot;, &quot;checked&quot;);
+            } else {
+                alert(json.message);
+                // 退出登录
+            }
+        }
+    });
+});
+&lt;/script&gt;
+</code></pre>
+
+<p>当点击按钮时：</p>
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+$(&quot;#btn-change-info&quot;).click(function(){
+    $.ajax({
+        &quot;url&quot;:&quot;/users/change_info&quot;,
+        &quot;data&quot;:$(&quot;#form-change-info&quot;).serialize(),
+        &quot;type&quot;:&quot;POST&quot;,
+        &quot;dataType&quot;:&quot;json&quot;,
+        &quot;success&quot;:function(json) {
+            if (json.state == 200) {
+                alert(&quot;修改成功！&quot;);
+            } else {
+                alert(json.message);
+            }
+        },
+        &quot;error&quot;:function() {
+            alert(&quot;您的登录信息已经过期，请重新登录！&quot;);
+            location.href = &quot;login.html&quot;;
+        }
+    });
+});
+&lt;/script&gt;
+</code></pre>
+
+<h3>【附】 基于SpringMVC的文件上传</h3>
+<p><strong>1. 创建项目</strong></p>
+<p>创建新项目：</p>
+<ul>
+<li>
+<p>Group Id：cn.tedu.spring</p>
+</li>
+<li>
+<p>Artifact Id：SPRINGMVC-03-UPLOAD</p>
+</li>
+<li>
+<p>Packaging：war</p>
+</li>
+</ul>
+<p>然后，按照传统方式完成项目的创建（添加web.xml；添加Tomcat Runtime，复制pom.xml中的依赖，复制web.xml中的配置，复制spring的配置文件。注意：检查spring的配置文件是否存在多余且不可用的配置，如果有，则删除）。</p>
+<p><strong>2. 制作上传页面</strong></p>
+<p>上传文件的页面只要求是html页面即可，不需要是jsp页面(可以使用jsp页面)。</p>
+<p>上传使用的控件是：</p>
+<pre><code>&lt;input type=&quot;file&quot; /&gt;
+</code></pre>
+
+<p>并且，上传时的表单必须配置<code>enctype</code>属性，并且请求类型必须是<code>post</code>类型：</p>
+<pre><code>&lt;form method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;
+</code></pre>
+
+<p>整体设计可以是：</p>
+<pre><code>&lt;h1&gt;基于SpringMVC的文件上传&lt;/h1&gt;
+&lt;form enctype=&quot;multipart/form-data&quot;&gt;
+    &lt;p&gt;请选择您要上传的文件&lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;file&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;上传&quot; /&gt;
+&lt;/form&gt;
+</code></pre>
+
+<p><strong>3. 添加依赖</strong></p>
+<p>基于SpringMVC的文件上传需要添加<code>spring-webmvc</code>依赖，并添加<code>commons-fileupload</code>依赖：</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;commons-fileupload&lt;/groupId&gt;
+    &lt;artifactId&gt;commons-fileupload&lt;/artifactId&gt;
+    &lt;version&gt;1.4&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+<p><strong>4. 配置MultipartResolver</strong></p>
+<p>在spring的配置文件中添加：</p>
+<pre><code>&lt;!-- 文件上传：MultipartResolver --&gt;
+&lt;bean id=&quot;multipartResolver&quot; 
+    class=&quot;org.springframework.web.multipart.commons.CommonsMultipartResolver&quot;&gt;
+&lt;/bean&gt;
+</code></pre>
+
+<p>注意：此项配置中，<code>&lt;bean&gt;</code>的<code>id</code>必须是<code>multipartResolver</code>！</p>
+<p>该<code>&lt;bean&gt;</code>也可以添加更多的配置，但是，不是必须的！</p>
+<p>此次项目中，需要开启注解驱动：</p>
+<pre><code>&lt;!-- 注解驱动 --&gt;
+&lt;mvc:annotation-driven /&gt;
+</code></pre>
+
+<p><strong>5. 开发控制器接收上传请求</strong></p>
+<p>创建控制器类<code>cn.tedu.spring.FileUploadController</code>，并添加处理请求的方法：</p>
+<pre><code>@Controller
+public class FileUploadController {
+
+    @RequestMapping(&quot;/upload.do&quot;)
+    public String handleUpload(
+        @RequestParam(&quot;file&quot;) MultipartFile file) {
+        return null;
+    }
+
+}
+</code></pre>
+
+<p>注意：客户端提交的上传的文件需要声明为<code>MultipartFile</code>类型（这是一个接口类型，实际类型是<code>CommonsMultipartFile</code>），并且，需要添加<code>@RequestParam</code>注解，如果没有添加该注解，在某些版本中可能会出错。</p>
+<p>当然，以上控制器的方法确定后，前端页面中<code>&lt;form&gt;</code>的<code>action</code>属性和上传控件的<code>name</code>属性应该与之保持一致：</p>
+<pre><code>&lt;form method=&quot;post&quot; action=&quot;upload.do&quot; enctype=&quot;multipart/form-data&quot;&gt;
+    &lt;input type=&quot;file&quot; name=&quot;file&quot; /&gt;
+</code></pre>
+
+<p>在控制器中，处理请求的方法中的参数<code>MultipartFile</code>其实就是客户选择上传的文件，直接调用<code>transferTo()</code>方法将其保存到某个文件即可：</p>
+<pre><code>@RequestMapping(&quot;/upload.do&quot;)
+public String handleUpload(
+    @RequestParam(&quot;file&quot;) MultipartFile file) 
+        throws IllegalStateException, IOException {
+    File dest = new File(&quot;d:/12345.png&quot;);
+    file.transferTo(dest);
+    return null;
+}
+</code></pre>
+
+<p>明天需要使用到：</p>
+<ul>
+<li>
+<p>File类的多种构造方法</p>
+</li>
+<li>
+<p>File类的mkdir() / mkdirs()</p>
+</li>
+<li>
+<p>File类的exists()</p>
+</li>
+</ul>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

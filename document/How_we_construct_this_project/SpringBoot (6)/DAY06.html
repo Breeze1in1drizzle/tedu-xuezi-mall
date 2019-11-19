@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DAY06</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h3>20. 用户-上传头像-持久层</h3>
+<p><strong>1. 分析SQL语句</strong></p>
+<p>当用户上传头像时，服务器需要：</p>
+<ol>
+<li>
+<p>存储用户上传的头像文件；</p>
+</li>
+<li>
+<p>将存储的文件的路径记录在数据库中。</p>
+</li>
+</ol>
+<p>对于持久层开发来说，需要做的就是将存储文件的路径更新到用户表中：</p>
+<pre><code>UPDATE t_user 
+SET avatar=?, modified_user=?, modified_time=? 
+WHERE uid=?
+</code></pre>
+
+<p><strong>2. 接口与抽象方法</strong></p>
+<p>在<code>UserMapper</code>接口中添加抽象方法：</p>
+<pre><code>Integer updateAvatar(
+    @Param(&quot;uid&quot;) Integer uid, 
+    @Param(&quot;avatar&quot;) String avatar, 
+    @Param(&quot;modifiedUser&quot;) String modifiedUser, 
+    @Param(&quot;modifiedTime&quot;) Date modifiedTime);
+</code></pre>
+
+<p><strong>3. 配置映射</strong></p>
+<p>配置的映射：</p>
+<pre><code>&lt;!-- 更新用户头像 --&gt;
+&lt;!-- Integer updateAvatar(
+        @Param(&quot;uid&quot;) Integer uid, 
+        @Param(&quot;avatar&quot;) String avatar, 
+        @Param(&quot;modifiedUser&quot;) String modifiedUser, 
+        @Param(&quot;modifiedTime&quot;) Date modifiedTime) --&gt;
+&lt;update id=&quot;updateAvatar&quot;&gt;
+    UPDATE 
+        t_user 
+    SET 
+        avatar=#{avatar}, 
+        modified_user=#{modifiedUser}, 
+        modified_time=#{modifiedTime} 
+    WHERE 
+        uid=#{uid}
+&lt;/update&gt;
+</code></pre>
+
+<p>单元测试：</p>
+<pre><code>@Test
+public void updateAvatar() {
+    Integer uid = 10;
+    String avatar = &quot;这里应该是头像的路径&quot;;
+    String modifiedUser = &quot;超级管理员&quot;;
+    Date modifiedTime = new Date();
+    Integer rows = mapper.updateAvatar(uid, avatar, modifiedUser, modifiedTime);
+    System.err.println(&quot;rows=&quot; + rows);
+}
+</code></pre>
+
+<h3>21. 用户-上传头像-业务层</h3>
+<p><strong>1. 设计异常</strong></p>
+<p>请参考：修改个人资料</p>
+<p><strong>2. 接口与抽象方法</strong></p>
+<p>请参考：修改个人资料</p>
+<p>抽象方法的声明：</p>
+<pre><code>/**
+ * 更新个人头像
+ * @param avatar 头像路径
+ * @throws UserNotFoundException 用户数据不存在
+ * @throws UpdateException 更新数据异常
+ */
+void changeAvatar(Integer uid, String avatar) 
+        throws UserNotFoundException, 
+            UpdateException;
+</code></pre>
+
+<p><strong>3. 实现</strong></p>
+<p>请参考：修改个人资料</p>
+<p>先私有化实现持久层中新添加的方法：</p>
+<pre><code>/**
+ * 更新用户头像
+ * @param uid 用户的id
+ * @param avatar 头像的路径
+ * @param modifiedUser 修改执行人
+ * @param modifiedTime 修改时间
+ */
+private void updateAvatar(
+        Integer uid, String avatar, 
+        String modifiedUser, Date modifiedTime) {
+    Integer rows = userMapper.updateAvatar(uid, avatar, modifiedUser, modifiedTime);
+    if (rows != 1) {
+        throw new UpdateException(
+            &quot;修改用户数据时出现未知错误！&quot;);
+    }
+}
+</code></pre>
+
+<p>实现的抽象方法：</p>
+<pre><code>@Override
+public void changeAvatar(Integer uid, String avatar) throws UserNotFoundException, UpdateException {
+    // 根据uid查询用户数据
+    User result = findByUid(uid);
+    // 判断查询结果是否为null
+    if (result == null) {
+        // 是：抛出UserNotFoundException
+        throw new UserNotFoundException(
+            &quot;修改头像失败！尝试访问的用户不存在！&quot;);
+    }
+
+    // 判断查询结果中isDelete是否为1
+    if (result.getIsDelete().equals(1)) {
+        // 是：抛出UserNotFoundException
+        throw new UserNotFoundException(
+            &quot;修改头像失败！尝试访问的用户不存在！&quot;);
+    }
+
+    // 向user中封装modifiedUser和modifiedTime
+    String modifiedUser = result.getUsername();
+    Date modifiedTime = new Date();
+    // 执行更新
+    updateAvatar(uid, avatar, modifiedUser, modifiedTime);
+}
+</code></pre>
+
+<p>单元测试：</p>
+<pre><code>@Test
+public void changeAvatar() {
+    try {
+        Integer uid = 10;
+        String avatar = &quot;新头像的路径&quot;;
+        service.changeAvatar(uid, avatar);
+        System.err.println(&quot;OK.&quot;);
+    } catch (ServiceException e) {
+        System.err.println(e.getClass().getName());
+        System.err.println(e.getMessage());
+    }
+}
+</code></pre>
+
+<h3>22. 用户-上传头像-控制器层</h3>
+<p><strong>1. 处理异常</strong></p>
+<p>创建上传时可能涉及的异常类：</p>
+<pre><code>RuntimeException
+-- cn.tedu.store.controller.ex.FileUploadException
+-- -- cn.tedu.store.controller.ex.FileEmptyException
+-- -- cn.tedu.store.controller.ex.FileSizeException
+-- -- cn.tedu.store.controller.ex.FileContentTypeException
+-- -- cn.tedu.store.controller.ex.FileIllegalStateException
+-- -- cn.tedu.store.controller.ex.FileIOException
+</code></pre>
+
+<p>然后，需要在<code>BaseController</code>中添加对以上5种实际抛出的异常（不包括FileUploadException）的处理，在处理之前，应该修改原有的处理异常的方法之前的注解：</p>
+<pre><code>@ExceptionHandler({ServiceException.class, FileUploadException.class})
+</code></pre>
+
+<p>然后，在处理异常的方法中添加5组else if语句，对这5种异常进行处理！</p>
+<p><strong>2. 设计请求</strong></p>
+<pre><code>请求路径：/users/change_avatar
+请求参数：HttpServletRequest request, MultipartFile file
+请求方式：POST
+响应数据：ResponseResult&lt;String&gt;
+是否拦截：是，无需修改配置
+</code></pre>
+
+<p><strong>3. 处理请求</strong></p>
+<pre><code>// 确定上传文件的名称：UPLOAD_DIR
+private static final String UPLOAD_DIR = &quot;upload&quot;;
+// 确定上传文件的最大大小
+private static final long UPLOAD_MAX_SIZE = 1 * 1024 * 1024;
+// 确定允许上传的类型的列表
+private static final List&lt;String&gt; UPLOAD_CONTENT_TYPES
+    = new ArrayList&lt;&gt;();
+
+static {
+    UPLOAD_CONTENT_TYPES.add(&quot;xxx&quot;);
+    UPLOAD_CONTENT_TYPES.add(&quot;xxx&quot;);
+    UPLOAD_CONTENT_TYPES.add(&quot;xxx&quot;);
+    UPLOAD_CONTENT_TYPES.add(&quot;xxx&quot;);
+}
+
+@RequestMapping(&quot;/change_avatar&quot;)
+public ResponseResult&lt;String&gt; changeAvatar(
+    HttpServletRequest request, 
+    @RequestParam(&quot;file&quot;) MultipartFile file) {
+    // 检查文件是否为空
+    // 为空：抛出异常：FileEmptyException
+
+    // 检查文件大小
+    // 超出范围(&gt; UPLOAD_MAX_SIZE)：抛出异常：FileSizeException
+
+    // 检查文件类型
+    // 类型不符(contains()为false)：抛出异常：FileContentTypeException
+
+    // 确定文件夹路径：request.getServletContext().getRealPath(UPLOAD_DIR);
+    // 创建上传文件夹的File对象parent
+    // 检查文件夹是否存在，如果不存在，则创建
+
+    // 获取原文件名：file.getOriginalFilename()
+    // 从原文件名中得到扩展名
+    // 确定文件名：uuid/nanoTime/...
+
+    // 创建dest对象：new File(parent, filename);
+    // try
+    // 执行上传：file.transferTo(dest);
+    // catch:IllegalStateException：抛出FileIllegalStateException
+    // catch:IOException：抛出FileIOException
+
+    // 获取uid：getUidFromSession(request.getSession());
+    // 生成avatar：/UPLOAD_DIR/文件名.扩展名
+
+    // 执行更新：userService.changeAvatar(uid, avatar);
+    // 返回成功
+}
+</code></pre>
+
+<h3>23. 用户-上传头像-界面</h3>
+<pre><code>try {
+    控制器对象.changePassword()
+} catch (异常) {
+    按照BaseController中添加了@ExceptionHandler的方法进行处理
+}
+</code></pre>
+
+<h3>【附】 基于SpringMVC的文件上传【续】</h3>
+<p><strong>6. 关于上传的文件夹</strong></p>
+<p>在处理请求的方法中添加参数<code>HttpServletRequest</code>，然后调用该参数对象的<code>getServletContext().getRealPath(&quot;upload&quot;)</code>即可获取到<code>webapp</code>下的名为<code>upload</code>的文件夹的实际路径，例如<code>D:\apache-tomcat-7.0.54\wtpwebapps\SPRINGMVC-03-UPLOAD\upload\</code>。</p>
+<p>因为上传的文件大多后续将需要通过http方式被访问，所以，上传文件夹是应该在<code>webapp</code>之下！则应该通过以上方式获取文件夹的位置。</p>
+<p><strong>7. 关于上传的文件名</strong></p>
+<p>如果同一个项目中，上传的所有文件都将在同一个文件夹中，则需要保证每个文件的文件名是不相同的，否则，将会出现后续上传的文件会覆盖前序上传的文件！</p>
+<p>如果要保证文件名是唯一的，可以使用UUID，也可以使用System.nanoTime()，或使用时间与随机数的组合等等多种方式！</p>
+<p>通常，上传的文件的扩展名还是由原文件来决定，即上传过程中，不改变文件的扩展名，通过<code>MultipartFile</code>的<code>getOriginalFilename()</code>方法可以获取上传的文件的原名（该文件在客户端计算机中的原始名称），然后通过String类的API即可获取文件的扩展名：</p>
+<pre><code>String originalFilename = file.getOriginalFilename();
+int beginIndex = originalFilename.lastIndexOf(&quot;.&quot;);
+String suffix = &quot;&quot;;
+if (beginIndex &gt; 0) {
+    suffix = originalFilename.substring(beginIndex);
+}
+</code></pre>
+
+<p><strong>8. 关于MultipartFile接口的常用方法</strong></p>
+<ul>
+<li>
+<p><code>String getOriginalFilename()</code>：获取原文件名，即文件在客户端计算机中的名称；</p>
+</li>
+<li>
+<p><code>boolean isEmpty()</code>：判断上传的文件是否为空，如果在上传表单中没有选中文件，或选中的文件没有内容（0字节），将视为空，则返回true，否则返回false；</p>
+</li>
+<li>
+<p><code>long getSize()</code>：获取上传的文件的大小，以字节为单位，可以用于限制上传的文件的大小；</p>
+</li>
+<li>
+<p><code>String getContentType()</code>：获取上传的文件的文档类型，其值是文件的MIME类型，可以用于限制上传的文件的类型；</p>
+</li>
+<li>
+<p><code>InputStream getInputStream()</code>：获取上传的文件的输入流，主要用于自定义存储文件的过程，当自定义存储时，就不再需要调用<code>transferTo()</code>方法了；</p>
+</li>
+<li>
+<p><code>void transferTo(File dest)</code>：将上传的文件存储为指定的文件。</p>
+</li>
+</ul>
+<p><strong>9. 关于MultipartResolver的配置</strong></p>
+<p>在Spring的配置文件中，配置<code>CommonsMultipartResolver</code>时，可以为某些属性注入值，来完成某些配置：</p>
+<ul>
+<li>
+<p><code>maxUploadSize</code>：最大上传尺寸，以字节为单位，假设设置值为10M，则无论一次性上传多少个文件，其总和不允许超过10M；</p>
+</li>
+<li>
+<p><code>maxUploadSizePerFile</code>：上传的每个文件的最大尺寸，以字节为单位，假设设置值是10M，如果一次上传多个文件，则每个文件的大小都不可以超过10M，但是，多个文件的总和是可以超过10M的；</p>
+</li>
+<li>
+<p><code>defaultEncoding</code>：默认编码。</p>
+</li>
+</ul>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

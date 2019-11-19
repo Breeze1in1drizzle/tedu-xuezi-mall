@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DAY03</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h3>6. 用户-注册-控制器层</h3>
+<p><strong>[附] 异常</strong></p>
+<p>异常的体系结构：</p>
+<pre><code>Throwable
+    Error
+        OutOfMemoryError
+    Exception
+        IOException
+            FileNotFoundException
+        RuntimeException
+            NullPointerException
+            NumberFormatException
+            ClassCastException
+            ArithmeticException
+            IndexOutOfBoundsException
+                ArrayIndexOutOfBoundsException
+</code></pre>
+
+<p>关于异常的处理：从语法上，可以通过抛出（在方法体中使用<code>throw</code>抛出异常对象，并在方法签名中使用<code>throws</code>声明抛出）或捕获（使用<code>try...catch</code>语法包裹相关代码）这两种方式对异常进行处理！</p>
+<p>抛出：在方法体中如果抛出了异常对象，在方法的签名中必须声明抛出，并且，如果是重写的方法，不可以抛出更多的异常；</p>
+<p>捕获：捕获(<code>catch</code>)时，如果有多个异常，在捕获时可以不区分先后顺序，如果多个异常有继承关系，必须先捕获子级异常，然后再捕获父级异常。</p>
+<p>如果需要处理的异常是<code>RuntimeException</code>或其子孙类异常，则不受以上处理的语法约束！主要因为：[1] 这些异常出现的频率可能极高；[2] 这些异常都可以通常事先的判断等操作，杜绝异常的发生。</p>
+<p>关于异常的处理：首先，无论怎么处理，其实，该发生的异常已经发生了！所谓的处理，应该是“对已经发生的异常的补救”，通过这种处理，希望后续不再出现类似的“问题”。</p>
+<p>在实际应用中，处理异常可能表现为“向用户提示错误信息”，因为，如果程序出现异常，类似于<code>NullPointerException</code>这种的信息是普通用户看不懂的，而专业人员可能从中分析出程序的流程或某些数据，所以，这类信息是不应该向外暴露给任何人的！所以，任何异常都是需要处理的！处理时，应该先考虑当前类或当前方法是否适合甚至能够<code>try...catch</code>进行处理，如果不行，则应该抛出！</p>
+<p><strong>基于SpringMVC框架的异常处理</strong></p>
+<p>可以自定义一个专门用于处理异常的方法，该方法要求：</p>
+<ol>
+<li>
+<p>访问权限应该是<code>public</code>；</p>
+</li>
+<li>
+<p>返回值与普通处理请求的方法相同；</p>
+</li>
+<li>
+<p>方法的名称可以自定义；</p>
+</li>
+<li>
+<p>方法的参数必须包含1个异常类型，例如<code>Throwable</code>或<code>Exception</code>等，表示将会捕获到的异常对象；</p>
+</li>
+<li>
+<p>必须添加<code>@ExceptionHandler</code>注解，该注解要求SSM环境中添加<code>&lt;mvc:annotation-driven /&gt;</code>。</p>
+</li>
+</ol>
+<p>然后，在方法之前使用<code>@ExceptionHandler</code>注解，并在注解参数中定义需要处理的异常的类型：</p>
+<pre><code>@ExceptionHandler(ServiceException.class)
+public ResponseResult&lt;Void&gt; handleException(Throwable e) {
+    ResponseResult&lt;Void&gt; rr
+        = new ResponseResult&lt;Void&gt;();
+    rr.setMessage(e.getMessage());
+
+    if (e instanceof UsernameDuplicateException) {
+        // 400-用户名冲突
+        rr.setState(400);
+    } else if (e instanceof InsertException) {
+        // 500-插入数据异常
+        rr.setState(500);
+    }
+
+    return rr;
+}
+</code></pre>
+
+<p>这种处理异常的方法，只能作用于当前控制器类中的处理请求的方法，即当前类中的代码出现异常才可以被处理！为了统一处理，应该创建<code>BaseController</code>基类，把处理异常的方法放在基类中，然后，当前项目中所有的控制器类都应该继承自这个基类！</p>
+<h3>7. 用户-注册-前端界面</h3>
+<h3>8. 用户-登录-持久层</h3>
+<p><strong>1. 分析SQL语句</strong></p>
+<p>登录应该是根据用户名查询用户数据，且根据查询结果中的密码和用户输入的密码进行对比，以判断登录成功与否。</p>
+<pre><code>SELECT
+    uid, username, password, salt, avatar, is_delete
+FROM 
+    t_user 
+WHERE 
+    username=?
+</code></pre>
+
+<blockquote>
+<p>在SQL语句中，不区分英文大小写，所以，在查询时，不应该把密码作为查询条件之一，而是应该把密码作为查询结果的一部分，后续通过Java程序的equals()方法来对比密码！</p>
+</blockquote>
+<p><strong>2. 接口与抽象方法</strong></p>
+<p>由于此前设计“注册”时，已经定义了相关方法，所以，无需再次开发！</p>
+<p><strong>3. 配置映射</strong></p>
+<p>由于此前设计“注册”时，已经配置了相关映射，所以，只需要添加查询的字段列表即可！</p>
+<pre><code>&lt;!-- 根据用户名查询用户数据 --&gt;
+&lt;!-- User findByUsername(String username) --&gt;
+&lt;select id=&quot;findByUsername&quot;
+    resultType=&quot;cn.tedu.store.entity.User&quot;&gt;
+    SELECT 
+        uid, username,
+        password, salt, 
+        avatar,
+        is_delete AS isDelete
+    FROM 
+        t_user 
+    WHERE 
+        username=#{username}
+&lt;/select&gt;
+</code></pre>
+
+<p>由于修改了程序代码，应该重新执行单元测试（无需重新编写），以测试功能是否正常。</p>
+<h3>9. 用户-登录-业务层</h3>
+<p><strong>1. 设计异常</strong></p>
+<p>此次“登录”操作可能出现的异常有：用户名不存在、用户数据已被标记为删除、密码错误。</p>
+<p>则应该在<code>cn.tedu.store.service.ex</code>创建异常类：</p>
+<pre><code>UserNotFoundException
+PasswordNotMatchException
+</code></pre>
+
+<p>以上2个异常都应该继承自<code>ServiceException</code>。</p>
+<p><strong>2. 接口与抽象方法</strong></p>
+<p>在<code>IUserService</code>接口中添加抽象方法：</p>
+<pre><code>User login(String username, String password) throws UserNotFoundException, PasswordNotMatchException;
+</code></pre>
+
+<p><strong>3. 实现</strong></p>
+<p>在<code>UserServiceImpl</code>中重写以上抽象方法：</p>
+<pre><code>public User login(String username, String password) throws UserNotFoundException, PasswordNotMatchException {
+    // 根据参数username查询用户：User findByUsername(String username)
+    // 判断查询结果是否为null
+    // 是：抛出UserNotFoundException
+
+    // 判断is_delete是否标记为已删除：isDelete属性值是否为1
+    // 是：抛出UserNotFoundException
+
+    // 从查询结果中获取盐值
+    // 对参数password执行加密
+    // 判断查询结果中的密码与刚加密结果是否一致
+    // 是：
+    // -- 返回查询结果
+    // 否：抛出PasswordNotMatchException
+}
+</code></pre>
+
+<p>具体的实现为：</p>
+<pre><code>@Override
+public User login(String username, String password) throws UserNotFoundException, PasswordNotMatchException {
+    // 根据参数username查询用户：User findByUsername(String username)
+    User result = findByUsername(username);
+    // 判断查询结果是否为null
+    if (result == null) {
+        // 是：抛出UserNotFoundException
+        throw new UserNotFoundException(
+            &quot;登录失败！尝试登录的用户不存在！&quot;);
+    }
+
+    // 判断is_delete是否标记为已删除：isDelete属性值是否为1
+    if (result.getIsDelete().equals(1)) {
+        // 是：抛出UserNotFoundException
+        throw new UserNotFoundException(
+            &quot;登录失败！尝试登录的用户不存在！&quot;);
+    }
+
+    // 从查询结果中获取盐值
+    String salt = result.getSalt();
+    // 对参数password执行加密
+    String md5Password = getMd5Password(password, salt);
+    // 判断查询结果中的密码与刚加密结果是否一致
+    if (result.getPassword().equals(md5Password)) {
+        // 是：准备返回结果，先去除部分不需要对外使用的数据
+        result.setPassword(null);
+        result.setSalt(null);
+        result.setIsDelete(null);
+        // 返回查询结果
+        return result;
+    } else {
+        // 否：抛出PasswordNotMatchException
+        throw new PasswordNotMatchException(
+            &quot;登录失败！错误密码！&quot;);
+    }
+}
+</code></pre>
+
+<p>完成后，应该在<code>UserServiceTestCase</code>中编写并执行单元测试：</p>
+<pre><code>@Test
+public void login() {
+    try {
+        String username = &quot;root&quot;;
+        String password = &quot;1234&quot;;
+        User data = service.login(username, password);
+        System.err.println(data);
+    } catch (ServiceException e) {
+        System.err.println(e.getClass().getName());
+        System.err.println(e.getMessage());
+    }
+}
+</code></pre>
+
+<h3>10. 用户-登录-控制器层</h3>
+<h3>11. 用户-登录-界面</h3>
+<h3>【附】内存溢出 / 内存泄漏 / Leak</h3>
+<p>内存溢出的原因主要是：程序已经正常或非正常（出现异常导致崩溃）结束，但是相关连接对象（例如流对象）并没有关闭，仍保持连接！由于程序已经结束，该对象已经无法继续使用，但是，在JVM尝试GC时，发现该对象仍保持连接，则不会将其视为垃圾数据，则不会回收，进而导致该对象将一直存在于内存中，却又无法再使用！</p>
+<p>可以认为：少量的内存溢出，其实并没有明显的危害！但是，每个程序员编写代码时，都应该尽量的避免任何可能出现的内存溢出！</p>
+<p>内存溢出达到一定的量之后，就会影响程序的运行，甚至撑满整个内存，并出现“溢出”的现象！</p>
+<p>解决内存溢出的根本做法：当连接型对象使用完毕之后，应该及时释放其占用的内存资源，通常这些类型都有例如<code>close()</code>类似的方法，使用完毕之后调用即可。</p>
+<h3>【附】关于static</h3>
+<p><code>static</code>关键字是用于修饰类的成员的，例如添加在属性、方法、内部类的声明语句中。</p>
+<p><code>static</code>表现的特性有：唯一，常驻。</p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

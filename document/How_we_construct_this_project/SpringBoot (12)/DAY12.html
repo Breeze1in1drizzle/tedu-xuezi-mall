@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DAY12</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h3>购物车-增加数量-持久层</h3>
+<p>点击页面中的加号和减号可以分别将购物车中商品的数量增加1或减少1，以增加为例，需要使用的SQL语句是：</p>
+<pre><code>UPDATE 
+    t_cart 
+SET 
+    num=?, modified_user=?, modified_time=? 
+WHERE 
+    cid=?
+</code></pre>
+
+<p>该SQL语句及对应的持久层功能已经存在，无需再开发。</p>
+<p>在执行增加之前，应该先检查该数据是否存在，且数据归属是否正确（不允许修改别人的购物车中的数据），且还要获取原有数量，将原有数量增加1，得到新的数量值，则需要：</p>
+<pre><code>SELECT uid, num FROM t_cart WHERE cid=?
+</code></pre>
+
+<p>该功能尚不存在，需要开发。</p>
+<p>所以，需要在<code>CartMapper</code>接口中添加：</p>
+<pre><code>Cart findByCid(Integer cid);
+</code></pre>
+
+<p>然后，在<code>CartMapper.xml</code>中配置映射：</p>
+<pre><code>&lt;!-- 根据购物车数据id获取购物车数据 --&gt;
+&lt;!-- Cart findByCid(Integer cid) --&gt;
+&lt;select id=&quot;findByCid&quot;
+    resultType=&quot;cn.tedu.store.entity.Cart&quot;&gt;
+    SELECT 
+        uid, num 
+    FROM 
+        t_cart 
+    WHERE 
+        cid=#{cid}
+&lt;/select&gt;
+</code></pre>
+
+<p>并编写、执行单元测试：</p>
+<pre><code>@Test
+public void findByCid() {
+    Integer cid = 6;
+    Cart cart = mapper.findByCid(cid);
+    System.err.println(cart);
+}
+</code></pre>
+
+<h3>购物车-增加数量-业务层</h3>
+<p>此次操作的流程大致是：根据尝试增加数量的数据id去查询数据，并检查数据是否存在、数据归属是否正确，然后基于查询结果中的商品数量再增加1，最后执行更新。</p>
+<p>如果查询不到匹配的数据，应该抛出：<code>CartNotFoundException</code></p>
+<p>如果数据归属有误，应该抛出：<code>AccessDeniedException</code></p>
+<p>如果执行更新出错，应该抛出：<code>UpdateException</code></p>
+<p>所以，需要创建<code>cn.tedu.store.service.ex.CartNotFoundException</code>异常类。</p>
+<p>在业务层接口<code>ICartService</code>中添加抽象方法：</p>
+<pre><code>void addNum(Integer uid, String username, Integer cid);
+</code></pre>
+
+<p>然后，在业务层实现类中，先私有化实现接口中新添加的方法：</p>
+<p>再重写接口中的抽象方法：</p>
+<pre><code>public void addNum(Integer uid, String username, Integer cid) {
+    // 根据参数cid查询数据：findByCid(cid)
+    // 判断查询结果是否为null
+    // 是：CartNotFoundException
+
+    // 判断查询结果中的uid与当前登录的用户id(参数uid)是否不一致
+    // 是：AccessDeniedException
+
+    // 暂不实现：判断商品的状态、库存等，即某商品是否可以存在于购物车中
+
+    // 将查询结果中的商品数量加1
+    // 执行更新：updateNum(cid, num, modifiedUser, modifiedTime)
+}
+</code></pre>
+
+<p>具体实现为：</p>
+<pre><code>@Override
+public void addNum(Integer uid, String username, Integer cid)
+        throws CartNotFoundException, AccessDeniedException, UpdateException {
+    // 根据参数cid查询数据：findByCid(cid)
+    Cart result = findByCid(cid);
+    // 判断查询结果是否为null
+    if (result == null) {
+        // 是：CartNotFoundException
+        throw new CartNotFoundException(
+            &quot;增加商品数量错误！尝试访问的数据不存在！&quot;);
+    }
+
+    // 判断查询结果中的uid与当前登录的用户id(参数uid)是否不一致
+    if (!result.getUid().equals(uid)) {
+        // 是：AccessDeniedException
+        throw new CartNotFoundException(
+            &quot;增加商品数量错误！数据归属错误！&quot;);
+    }
+
+    // 暂不实现：判断商品的状态、库存等，即某商品是否可以存在于购物车中
+
+    // 将查询结果中的商品数量加1
+    Integer num = result.getNum() + 1;
+    // 执行更新：updateNum(cid, num, modifiedUser, modifiedTime)
+    Date now = new Date();
+    updateNum(cid, num, username, now);
+}
+</code></pre>
+
+<p>测试：</p>
+<pre><code>@Test
+public void addNum() {
+    try {
+        Integer uid = 8;
+        String username = &quot;系统管理员&quot;;
+        Integer cid = 8;
+        service.addNum(uid, username, cid);
+        System.err.println(&quot;OK.&quot;);
+    } catch (ServiceException e) {
+        System.err.println(e.getClass().getName());
+        System.err.println(e.getMessage());
+    }
+}
+</code></pre>
+
+<h3>购物车-增加数量-控制器层</h3>
+<p>此次业务层抛了新的<code>CartNotFoundException</code>需要处理。</p>
+<p>在<code>CartController</code>中添加处理请求的方法：</p>
+<pre><code>@RequestMapping(&quot;/{id}/add_num&quot;)
+public ResponseResult&lt;Void&gt; addNum(
+    @PathVariable(&quot;id&quot;) Integer cid,
+    HttpSession session) {
+    // 从session中获取uid和username
+    // 执行
+    // 返回
+}
+</code></pre>
+
+<p>可以通过<code>http://localhost:8080/carts/6/add_num</code>执行测试。</p>
+<h3>显示确认订单页-持久层</h3>
+<p>首先，在确认订单页需要显示当前登录的用户的收货地址列表，该功能已经全部完成，用户登录后，通过<code>http://localhost:8080/addresses/</code>即可获取收货地址数据，后续，在实现界面时，获取数据并显示即可！所以，无需考虑该部分功能的持久层、业务层、控制器层的开发！</p>
+<p>在确认订单页面，还需要显示用户勾选的即将购买的商品，则客户端会提交所勾选的数据的id，这些数据是购物车中的数据，如果要显示这些数据，应该通过客户端提交的（用户勾选的）一系列id来执行查询，对应的SQL语句应该是：</p>
+<pre><code>SELECT 
+    uid, cid, gid, t_cart.num,
+    title, image, price
+FROM 
+    t_cart 
+LEFT JOIN
+    t_goods
+ON
+    t_cart.gid=t_goods.id
+WHERE 
+    cid IN (?,?,?)
+ORDER BY 
+    t_cart.modified_time DESC, cid DESC
+</code></pre>
+
+<p>则对应的抽象方法应该是：</p>
+<pre><code>List&lt;CartVO&gt; findByCids(Integer[] cids);
+</code></pre>
+
+<p>映射应该是：</p>
+<pre><code>&lt;select id=&quot;findByCids&quot; resultType=&quot;cn.tedu.store.vo.CartVO&quot;&gt;
+    SELECT 
+        uid, cid, gid, t_cart.num,
+        title, image, price
+    FROM 
+        t_cart 
+    LEFT JOIN
+        t_goods
+    ON
+        t_cart.gid=t_goods.id
+    WHERE 
+        cid IN (
+            &lt;foreach collection=&quot;array&quot;
+                item=&quot;cid&quot; separator=&quot;,&quot;&gt;
+                #{cid}
+            &lt;/foreach&gt;
+        )
+    ORDER BY 
+        t_cart.modified_time DESC, cid DESC
+&lt;/select&gt;
+</code></pre>
+
+<p>单元测试：</p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

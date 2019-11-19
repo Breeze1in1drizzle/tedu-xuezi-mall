@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DAY10</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h3>38. 收货地址-删除-持久层</h3>
+<p><strong>1. 分析SQL语句</strong></p>
+<p>执行删除的SQL语句：</p>
+<pre><code>DELETE FROM t_address WHERE aid=?
+</code></pre>
+
+<p>与“设为默认”相同，在执行删除之前还应该检查数据是否存在，及数据归属是否正确，该功能已经完成，无需再次开发。</p>
+<p>另外，如果删除的收货地址是默认收货地址，则：如果仍有收货地址数据，将最后一次修改的收货地址设置为默认。对应：</p>
+<ul>
+<li>
+<p>如何判断刚才删除的是默认收货地址？由于删除之前本来就会查询，则在原有的查询功能中，添加查询is_default字段即可！</p>
+</li>
+<li>
+<p>如何判断删除后是否仍有收货地址数据？通过原有的<code>countByUid(uid)</code>，如果统计结果为0，则没有数据了，即刚才删除的就是最后一条，如果统计结果不为0，则表示删除后仍有数据！</p>
+</li>
+<li>
+<p>如何得到最后一次修改的收货地址？对应的SQL语句是：<code>SELECT aid FROM t_address WHERE uid=? ORDER BY modified_time DESC, aid DESC LIMIT 0,1</code></p>
+</li>
+<li>
+<p>如何把某地址设为默认？通过现有的<code>updateNonDefault(uid)</code>和<code>updateDefault(aid)</code>即可实现。</p>
+</li>
+</ul>
+<p><strong>2. 接口与抽象方法</strong></p>
+<p>在持久层接口中添加新的抽象方法：</p>
+<pre><code>Integer deleteByAid(Integer aid);
+
+Address findLastModified(Integer uid);
+</code></pre>
+
+<p><strong>3. 配置映射</strong></p>
+<pre><code>&lt;!-- 根据id删除收货地址数据 --&gt;
+&lt;!-- Integer deleteByAid(Integer aid) --&gt;
+&lt;delete id=&quot;deleteByAid&quot;&gt;
+    DELETE FROM t_address WHERE aid=#{aid}
+&lt;/delete&gt;
+
+&lt;!-- 获取某用户最后修改的收货地址数据 --&gt;
+&lt;!-- Address findLastModified(Integer uid) --&gt;
+&lt;select id=&quot;findLastModified&quot;
+    resultType=&quot;cn.tedu.store.entity.Address&quot;&gt;
+    SELECT 
+        aid
+    FROM 
+        t_address 
+    WHERE 
+        uid=#{uid}
+    ORDER BY
+        modified_time DESC, aid DESC
+    LIMIT
+        0,1
+&lt;/select&gt;
+</code></pre>
+
+<p>单元测试：</p>
+<pre><code>@Test
+public void deleteByAid() {
+    Integer aid = 8;
+    Integer rows = mapper.deleteByAid(aid);
+    System.err.println(&quot;rows=&quot; + rows);
+}
+
+@Test
+public void findLastModified() {
+    Integer uid = 8;
+    Address data = mapper.findLastModified(uid);
+    System.err.println(data);
+}
+</code></pre>
+
+<h3>39. 收货地址-删除-业务层</h3>
+<p><strong>1. 设计异常</strong></p>
+<p>删除业务的大致流程应该是：先检查数据是否存在 &gt; 检查数据归属是否正确 &gt; 执行删除 &gt; 检查删除的数据是否是默认地址 &gt; 检查是否还有数据 &gt; 获取最后修改的数据 &gt; 将全部数据设置为非默认 &gt; 将最后修改的数据设置为默认。</p>
+<p>在以上操作中可能涉及的异常：</p>
+<ul>
+<li>
+<p>先检查数据是否存在：<code>AddressNotFoundException</code></p>
+</li>
+<li>
+<p>检查数据归属是否正确：<code>AccessDeniedException</code></p>
+</li>
+<li>
+<p>执行删除：<code>DeleteException</code></p>
+</li>
+<li>
+<p>检查删除的数据是否是默认地址：无</p>
+</li>
+<li>
+<p>检查是否还有数据：无</p>
+</li>
+<li>
+<p>获取最后修改的数据：无</p>
+</li>
+<li>
+<p>将全部数据设置为非默认：<code>UpdateException</code></p>
+</li>
+<li>
+<p>将最后修改的数据设置为默认：<code>UpdateException</code></p>
+</li>
+</ul>
+<p><strong>2. 接口与抽象方法</strong></p>
+<pre><code>void delete(Integer uid, Integer aid) throws AddressNotFoundException, AccessDeniedException, DeleteException, UpdateException;
+</code></pre>
+
+<p><strong>3. 实现</strong></p>
+<p>先私有化添加持久层中的新方法：</p>
+<pre><code>/**
+ * 根据id删除收货地址数据
+ * @param aid 将删除的收货地址数据的id
+ * @return 受影响的行数
+ */
+private void deleteByAid(Integer aid) {
+    Integer rows = addressMapper.deleteByAid(aid);
+    if (rows != 1) {
+        throw new DeleteException(
+            &quot;删除收货地址时出现未知错误！&quot;);
+    }
+}
+
+/**
+ * 获取某用户最后修改的收货地址数据
+ * @param uid 用户的id
+ * @return 该用户最后修改的收货地址数据
+ */
+private Address findLastModified(Integer uid) {
+    return addressMapper.findLastModified(uid);
+}
+</code></pre>
+
+<p>重写接口中的抽象方法：</p>
+<pre><code>@Transactional
+public void delete(Integer uid, Integer aid) throws AddressNotFoundException, AccessDeniedException, DeleteException, UpdateException {
+    // 根据aid查询即将删除的数据
+    // 判断查询结果是否为null
+    // 是：AddressNotFoundException
+
+    // 检查数据归属是否不正确
+    // 是：AccessDeniedException
+
+    // 执行删除
+
+    // 检查此前的查询结果中的isDefault是否为0
+    // return;
+
+    // 获取当前用户的收货地址数据的数量
+    // 判断数量是否为0
+    // return;
+
+    // 获取当前用户最后修改的收货地址数据
+    // 将全部数据设置为非默认
+    // 将最后修改的数据设置为默认。
+}
+</code></pre>
+
+<p>具体实现：</p>
+<pre><code>@Override
+@Transactional
+public void delete(Integer uid, Integer aid)
+        throws AddressNotFoundException, AccessDeniedException, DeleteException, UpdateException {
+    // 根据aid查询即将删除的数据
+    Address result = findByAid(aid);
+    // 判断查询结果是否为null
+    if (result == null) {
+        // 是：AddressNotFoundException
+        throw new AddressNotFoundException(
+            &quot;删除收货地址失败！尝试访问的数据不存在！&quot;);
+    }
+
+    // 检查数据归属是否不正确
+    if (!result.getUid().equals(uid)) {
+        // 是：AccessDeniedException
+        throw new AccessDeniedException(
+            &quot;删除收货地址失败！数据归属错误！&quot;);
+    }
+
+    // 执行删除
+    deleteByAid(aid);
+
+    // 检查此前的查询结果中的isDefault是否为0
+    if (result.getIsDefault().equals(0)) {
+        return;
+    }
+
+    // 获取当前用户的收货地址数据的数量
+    Integer count = countByUid(uid);
+    // 判断数量是否为0
+    if (count.equals(0)) {
+        return;
+    }
+
+    // 获取当前用户最后修改的收货地址数据
+    Address lastModifed = findLastModified(uid);
+    // 将全部数据设置为非默认
+    updateNonDefault(uid);
+    // 将最后修改的数据设置为默认。
+    updateDefault(lastModifed.getAid());
+}
+</code></pre>
+
+<p>单元测试：</p>
+<pre><code>@Test
+public void delete() {
+    try {
+        Integer uid = 8;
+        Integer aid = 6; 
+        service.delete(uid, aid);
+        System.err.println(&quot;OK.&quot;);
+    } catch (ServiceException e) {
+        System.err.println(e.getClass().getName());
+        System.err.println(e.getMessage());
+    }
+}
+</code></pre>
+
+<h3>40. 收货地址-删除-控制器层</h3>
+<p><strong>1. 处理异常</strong></p>
+<p>此次业务层抛出了新的<code>DeleteException</code>，需要在<code>BaseController</code>中处理。</p>
+<p><strong>2. 设计请求</strong></p>
+<pre><code>请求路径：/addresses/{aid}/delete
+请求参数：@PathVariable(&quot;aid&quot;) Integer aid, HttpSession session
+请求方式：POST
+响应数据：ResponseResult&lt;Void&gt;
+</code></pre>
+
+<p><strong>3. 处理请求</strong></p>
+<pre><code>@RequestMapping(&quot;/{aid}/delete&quot;)
+public ResponseResult&lt;Void&gt; delete(
+    @PathVariable(&quot;aid&quot;) Integer aid, HttpSession session) {
+    // 获取uid
+    // 执行
+    // 返回
+}
+</code></pre>
+
+<p>具体实现为：</p>
+<pre><code>@RequestMapping(&quot;/{aid}/delete&quot;)
+public ResponseResult&lt;Void&gt; delete(
+    @PathVariable(&quot;aid&quot;) Integer aid, HttpSession session) {
+    // 获取uid
+    Integer uid = getUidFromSession(session);
+    // 执行
+    addressService.delete(uid, aid);
+    // 返回
+    return new ResponseResult&lt;&gt;(SUCCESS);
+}
+</code></pre>
+
+<p>通过<code>http://localhost:8080/addresses/10/delete</code>测试。</p>
+<h3>41. 收货地址-删除-界面</h3>
+<pre><code>function deleteByAid(aid) {
+    $.ajax({
+        &quot;url&quot;:&quot;/addresses/&quot; + aid + &quot;/delete&quot;,
+        &quot;type&quot;:&quot;POST&quot;,
+        &quot;dataType&quot;:&quot;json&quot;,
+        &quot;success&quot;:function(json) {
+            if (json.state == 200) {
+                showAddressList();
+            } else {
+                alert(json.message);
+            }
+        },
+        &quot;error&quot;:function() {
+            alert(&quot;您的登录信息已经过期，请重新登录！&quot;);
+            location.href = &quot;login.html&quot;;
+        }
+    });
+}
+</code></pre>
+
+<h3>42. 主页-显示热销排行-实体类</h3>
+<p>创建<code>cn.tedu.store.entity.Goods</code>实体类：</p>
+<pre><code>/**
+ * 商品数据的实体类
+ */
+public class Goods extends BaseEntity {
+
+    private static final long serialVersionUID = 5960164494648879998L;
+
+    private Long id;
+    private Long categoryId;
+    private String itemType;
+    private String title;
+    private String sellPoint;
+    private Long price;
+    private Integer num;
+    private String barcode;
+    private String image;
+    private Integer status;
+    private Integer priority;
+
+    // SET/GET/toString
+
+}
+</code></pre>
+
+<h3>43. 主页-显示热销排行-持久层</h3>
+<p><strong>1. 分析SQL语句</strong></p>
+<pre><code>SELECT 
+    id, title, price, image
+FROM 
+    t_goods 
+WHERE 
+    status=1 AND num&gt;10
+ORDER BY
+    priority DESC
+LIMIT 
+    0,4
+</code></pre>
+
+<p><strong>2. 接口与抽象方法</strong></p>
+<p>创建<code>cn.tedu.store.mapper.GoodsMapper</code>接口，添加抽象方法：</p>
+<pre><code>List&lt;Goods&gt; findHotGoods();
+</code></pre>
+
+<p><strong>3. 配置映射</strong></p>
+<p>复制得到<code>GoodsMapper.xml</code>文件，修改根节点的<code>namespace</code>，并配置以上方法的映射：</p>
+<pre><code>&lt;mapper namespace=&quot;cn.tedu.store.mapper.GoodsMapper&quot;&gt;
+
+    &lt;!-- 处理商品数据的持久层接口 --&gt;
+    &lt;!-- List&lt;Goods&gt; findHotGoods() --&gt;
+    &lt;select id=&quot;findHotGoods&quot;
+        resultType=&quot;cn.tedu.store.entity.Goods&quot;&gt;
+        SELECT 
+            id, title, price, image
+        FROM 
+            t_goods 
+        WHERE 
+            status=1 AND num&gt;10
+        ORDER BY
+            priority DESC
+        LIMIT 
+            0,4
+    &lt;/select&gt;
+
+&lt;/mapper&gt;
+</code></pre>
+
+<p>创建新的测试类，编写并执行单元测试：</p>
+<pre><code>@RunWith(SpringRunner.class)
+@SpringBootTest
+public class GoodsMapperTestCase {
+
+    @Autowired
+    public GoodsMapper mapper;
+
+    @Test
+    public void findHotGoods() {
+        List&lt;Goods&gt; list = mapper.findHotGoods();
+        System.err.println(&quot;BEGIN:&quot;);
+        for (Goods data : list) {
+            System.err.println(data);
+        }
+        System.err.println(&quot;END.&quot;);
+    }
+
+}
+</code></pre>
+
+<h3>44. 主页-显示热销排行-业务层</h3>
+<p><strong>1. 设计异常</strong></p>
+<p>无</p>
+<p><strong>2. 接口与抽象方法</strong></p>
+<p>创建<code>cn.tedu.store.service.IGoodsService</code>接口，添加抽象方法：</p>
+<pre><code>List&lt;Goods&gt; getHotGoods();
+</code></pre>
+
+<p><strong>3. 实现</strong></p>
+<p>创建<code>cn.tedu.store.service.impl.GoodsServiceImpl</code>类，实现<code>IGoodsService</code>接口，在类之前添加<code>@Service</code>，在类中添加持久层对象<code>@Autowired private GoodsMapper goodsMapper;</code>。</p>
+<p>将持久层的方法私有化实现，并重写接口中的抽象方法：</p>
+<pre><code>/**
+ * 处理商品数据的业务层实现类
+ */
+@Service
+public class GoodsServiceImpl implements IGoodsService {
+
+    @Autowired
+    private GoodsMapper goodsMapper;
+
+    @Override
+    public List&lt;Goods&gt; getHotGoods() {
+        return findHotGoods();
+    }
+
+    /**
+     * 获取热销商品列表
+     * @return 热销商品列表
+     */
+    private List&lt;Goods&gt; findHotGoods() {
+        return goodsMapper.findHotGoods();
+    }
+
+}
+</code></pre>
+
+<p>创建单元测试类，编写并执行单元测试：</p>
+<pre><code>@RunWith(SpringRunner.class)
+@SpringBootTest
+public class GoodsServiceTestCase {
+
+    @Autowired
+    public IGoodsService service;
+
+    @Test
+    public void getHotGoods() {
+        List&lt;Goods&gt; list = service.getHotGoods();
+        System.err.println(&quot;BEGIN:&quot;);
+        for (Goods data : list) {
+            System.err.println(data);
+        }
+        System.err.println(&quot;END.&quot;);
+    }
+
+}
+</code></pre>
+
+<h3>45. 主页-显示热销排行-控制器层</h3>
+<p><strong>1. 处理异常</strong></p>
+<p>无</p>
+<p><strong>2. 设计请求</strong></p>
+<pre><code>请求路径：/goods/hot
+请求参数：无
+请求方式：GET
+响应数据：ResponseResult&lt;List&lt;Goods&gt;&gt;
+是否拦截：否，需要在配置中添加白名单：/goods/**
+</code></pre>
+
+<p><strong>3. 处理请求</strong></p>
+<p>首先，在拦截器的配置中添加白名单：<code>/goods/**</code></p>
+<p>创建<code>cn.tedu.store.controller.GoodsController</code>，继承自<code>BaseController</code>，在类之前添加<code>@RestController</code>和<code>@RequestMapping(&quot;/goods&quot;)</code>注解，在类中添加业务层对象<code>@Autowired private IGoodsService goodsService;</code>。</p>
+<p>添加处理请求的方法：</p>
+<pre><code>@GetMapping(&quot;/hot&quot;)
+public ResponseResult&lt;List&lt;Goods&gt;&gt; getHotGoods() {
+    // 获取数据
+    // 返回
+}
+</code></pre>
+
+<p>具体实现：</p>
+<pre><code>@RestController
+@RequestMapping(&quot;/goods&quot;)
+public class GoodsController extends BaseController {
+
+    @Autowired
+    private IGoodsService goodsService;
+
+    @GetMapping(&quot;/hot&quot;)
+    public ResponseResult&lt;List&lt;Goods&gt;&gt; getHotGoods() {
+        // 获取数据
+        List&lt;Goods&gt; data = goodsService.getHotGoods();
+        // 返回
+        return new ResponseResult&lt;&gt;(SUCCESS, data);
+    }
+
+}
+</code></pre>
+
+<h3>46. 主页-显示热销排行-界面</h3>
+<h3>47. 显示商品详情-持久层</h3>
+<p><strong>1. 分析SQL语句</strong></p>
+<pre><code>SELECT 
+    image, title, sell_point, price, num, status
+FROM 
+    t_goods 
+WHERE 
+    id=?
+</code></pre>
+
+<p><strong>2. 接口与抽象方法</strong></p>
+<p>在<code>GoodsMapper</code>接口中添加抽象方法：</p>
+<pre><code>Goods findById(Long id);
+</code></pre>
+
+<p><strong>3. 配置映射</strong></p>
+<pre><code>&lt;!-- 根据id查询商品详情 --&gt;
+&lt;!-- Goods findById(Long id) --&gt;
+&lt;select id=&quot;findById&quot;
+    resultType=&quot;cn.tedu.store.entity.Goods&quot;&gt;
+    SELECT 
+        image, title, 
+        sell_point AS sellPoint, 
+        price, num, 
+        status
+    FROM 
+        t_goods 
+    WHERE 
+        id=#{id}
+&lt;/select&gt;
+</code></pre>
+
+<p>测试：</p>
+<pre><code>@Test
+public void findById() {
+    Long id = 10000017L;
+    Goods data = mapper.findById(id);
+    System.err.println(data);
+}
+</code></pre>
+
+<h3>48. 显示商品详情-业务层</h3>
+<p><strong>1. 设计异常</strong></p>
+<p>无</p>
+<p><strong>2. 接口与抽象方法</strong></p>
+<pre><code>Goods getById(Long id);
+</code></pre>
+
+<p><strong>3. 实现</strong></p>
+<p>私有化实现：</p>
+<pre><code>/**
+ * 根据id查询商品详情
+ * @param id 商品的id
+ * @return 匹配的商品的详情，如果没有匹配的数据，则返回null
+ */
+private Goods findById(Long id) {
+    return goodsMapper.findById(id);
+}
+</code></pre>
+
+<p>重写抽象方法：</p>
+<pre><code>@Override
+public Goods getById(Long id) {
+    return findById(id);
+}
+</code></pre>
+
+<p>测试：</p>
+<pre><code>@Test
+public void getById() {
+    Long id = 10000017L;
+    Goods data = service.getById(id);
+    System.err.println(data);
+}
+</code></pre>
+
+<h3>49. 显示商品详情-控制器层</h3>
+<p><strong>1. 处理异常</strong></p>
+<p>无</p>
+<p><strong>2. 设计请求</strong></p>
+<pre><code>请求路径：/goods/{id}/details
+请求参数：@PathVariable(&quot;id&quot;) Long id
+请求方式：GET
+响应数据：ResponseResult&lt;Goods&gt;
+是否拦截：否，已完成配置
+</code></pre>
+
+<p><strong>3. 处理请求</strong></p>
+<pre><code>@GetMapping(&quot;/{id}/details&quot;)
+public ResponseResult&lt;Goods&gt; getById(
+    @PathVariable(&quot;id&quot;) Long id) {
+    // 执行
+    Goods data = goodsService.getById(id);
+    // 返回
+    return new ResponseResult&lt;&gt;(SUCCESS, data);
+}
+</code></pre>
+
+<h3>50 显示商品详情-界面</h3>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

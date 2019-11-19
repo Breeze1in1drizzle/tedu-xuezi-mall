@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DAY08</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h3>29. 收货地址-增加收货地址-获取省市区数据</h3>
+<p>在“增加收货地址”的页面处理中，需要以下功能：</p>
+<ul>
+<li>
+<p>获取全国所有省的列表：SELECT * FROM t<em>dict</em>district WHERE parent='86'</p>
+</li>
+<li>
+<p>获取某个省所有市的列表：SELECT * FROM t<em>dict</em>district WHERE parent=省code</p>
+</li>
+<li>
+<p>获取某个市所有区的列表：SELECT * FROM t<em>dict</em>district WHERE parent=市code</p>
+</li>
+</ul>
+<p>可以发现，以上3个功能对应的SQL语句是一样的：</p>
+<pre><code>SELECT * FROM t_dict_district WHERE parent=?
+</code></pre>
+
+<p>在开发时，应该先创建<code>cn.tedu.store.entity.District</code>实体类：</p>
+<pre><code>/**
+ * 省/市/区数据的实体类
+ */
+public class District implements Serializable {
+
+    private static final long serialVersionUID = -2777570570541589252L;
+
+    private Integer id;
+    private String parent;
+    private String code;
+    private String name;
+
+    // SET/GET/toString
+}
+</code></pre>
+
+<p>然后，创建<code>cn.tedu.store.mapper.DistrictMapper</code>持久层接口，并添加抽象方法：</p>
+<pre><code>List&lt;District&gt; findByParent(String parent);
+</code></pre>
+
+<p>再复制得到<code>DistrictMapper.xml</code>文件，配置以上抽象方法的映射：</p>
+<pre><code>&lt;mapper namespace=&quot;cn.tedu.store.mapper.DistrictMapper&quot;&gt;
+
+    &lt;!-- 获取所有省/某省所有市/某市所有区的列表 --&gt;
+    &lt;!-- List&lt;District&gt; findByParent(String parent) --&gt;
+    &lt;select id=&quot;findByParent&quot;
+        resultType=&quot;cn.tedu.store.entity.District&quot;&gt;
+        SELECT 
+            code, name
+        FROM 
+            t_dict_district 
+        WHERE 
+            parent=#{parent}
+        ORDER BY 
+            code ASC
+    &lt;/select&gt;
+
+&lt;/mapper&gt;
+</code></pre>
+
+<p>完成后，创建测试类，编写并执行测试方法：</p>
+<pre><code>@RunWith(SpringRunner.class)
+@SpringBootTest
+public class DistrictMapperTestCase {
+
+    @Autowired
+    public DistrictMapper mapper;
+
+    @Test
+    public void findByParent() {
+        String parent = &quot;999999&quot;;
+        List&lt;District&gt; list = mapper.findByParent(parent);
+        System.err.println(&quot;BEGIN:&quot;);
+        for (District data : list) {
+            System.err.println(data);
+        }
+        System.err.println(&quot;END.&quot;);
+    }
+
+}
+</code></pre>
+
+<p>接下来应该是业务层，通常，查询功能没有太多业务，也没有相关的异常，则直接创建<code>cn.tedu.store.service.IDistrictService</code>业务层接口，并添加抽象方法：</p>
+<pre><code>List&lt;District&gt; getByParent(String parent);
+</code></pre>
+
+<p>再创建<code>cn.tedu.store.service.impl.DistrictServiceImpl</code>业务层实现类，添加<code>@Service</code>注解，在类中添加持久层对象<code>@Autowired private DistrictMapper districtMapper</code>，私有化实现持久层方法，该类将实现<code>IDistrictService</code>接口，重写抽象方法：</p>
+<pre><code>/**
+ * 处理省/市/区数据的业务层实现类
+ */
+@Service
+public class DistrictServiceImpl implements IDistrictService {
+
+    @Autowired
+    private DistrictMapper distrctMapper;
+
+    @Override
+    public List&lt;District&gt; getByParent(String parent) {
+        return findByParent(parent);
+    }
+
+    /**
+     * 获取所有省/某省所有市/某市所有区的列表
+     * @param parent 获取省列表时，使用86；获取市列表时，使用省的代号；获取区列表时，使用市的代号
+     * @return 所有省/某省所有市/某市所有区的列表
+     */
+    private List&lt;District&gt; findByParent(String parent) {
+        return distrctMapper.findByParent(parent);
+    }
+
+}
+</code></pre>
+
+<p>完成后，仍创建测试类，编写并执行测试方法：</p>
+<pre><code>@RunWith(SpringRunner.class)
+@SpringBootTest
+public class DistrictServiceTestCase {
+
+    @Autowired
+    public IDistrictService service;
+
+    @Test
+    public void getByParent() {
+        String parent = &quot;86&quot;;
+        List&lt;District&gt; list = service.getByParent(parent);
+        System.err.println(&quot;BEGIN:&quot;);
+        for (District data : list) {
+            System.err.println(data);
+        }
+        System.err.println(&quot;END.&quot;);
+    }
+
+}
+</code></pre>
+
+<p>最后，还需要创建<code>cn.tedu.store.controller.DistrictController</code>控制器类，继承自<code>BaseController</code>，添加<code>@RestController</code>和<code>@RequestMapping(&quot;/districts&quot;)</code>注解，在类中声明<code>@Autowired private IDistrictService districtService;</code>业务层对象，然后，分析处理请求的方法：</p>
+<pre><code>请求路径：/districts/
+请求参数：String parent(*)
+请求方式：GET
+响应数据：ResponseResult&lt;List&lt;District&gt;&gt;
+是否拦截：否，需要添加白名单
+</code></pre>
+
+<p>所以，先在<code>LoginInterceptorConfigurer</code>中添加白名单：</p>
+<pre><code>excludePatterns.add(&quot;/districts/**&quot;);
+</code></pre>
+
+<p>然后在控制器类中添加处理请求的方法：</p>
+<pre><code>@RestController
+@RequestMapping(&quot;/districts&quot;)
+public class DistrictController extends BaseController {
+
+    @Autowired
+    private IDistrictService districtService;
+
+    @GetMapping(&quot;/&quot;)
+    public ResponseResult&lt;List&lt;District&gt;&gt; 
+        getByParent(@RequestParam(&quot;parent&quot;) String parent) {
+        List&lt;District&gt; data
+            = districtService.getByParent(parent);
+        return new ResponseResult&lt;&gt;(SUCCESS, data);
+    }
+
+}
+</code></pre>
+
+<p>最后，打开浏览器，无需登录，直接通过<code>http://localhost:8080/districts/?parent=86</code>进行测试。</p>
+<p>关于前端界面的代码：</p>
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+$(document).ready(function(){
+    showProvinceList();
+
+    $(&quot;#city&quot;).append('&lt;option value=&quot;0&quot;&gt;----- 请选择 -----&lt;/option&gt;');
+    $(&quot;#area&quot;).append('&lt;option value=&quot;0&quot;&gt;----- 请选择 -----&lt;/option&gt;');
+});
+
+$(&quot;#province&quot;).change(function() {
+    showCityList();
+
+    $(&quot;#area&quot;).empty();
+    $(&quot;#area&quot;).append('&lt;option value=&quot;0&quot;&gt;----- 请选择 -----&lt;/option&gt;');
+});
+
+$(&quot;#city&quot;).change(function() {
+    showAreaList();
+});
+
+function showProvinceList() {
+    $(&quot;#province&quot;).append('&lt;option value=&quot;0&quot;&gt;----- 请选择 -----&lt;/option&gt;');
+
+    $.ajax({
+        &quot;url&quot;:&quot;/districts/&quot;,
+        &quot;data&quot;:&quot;parent=86&quot;,
+        &quot;type&quot;:&quot;GET&quot;,
+        &quot;dataType&quot;:&quot;json&quot;,
+        &quot;success&quot;:function(json) {
+            if (json.state == 200) {
+                var list = json.data;
+                for (var i = 0; i &lt; list.length; i++) {
+                    console.log(list[i].name);
+                    var op = '&lt;option value=&quot;' + list[i].code + '&quot;&gt;' + list[i].name + '&lt;/option&gt;';
+                    $(&quot;#province&quot;).append(op);
+                }
+            } else {
+                alert(json.message);
+            }
+        }
+    });
+}
+
+function showCityList() {
+    $(&quot;#city&quot;).empty();
+
+    $(&quot;#city&quot;).append('&lt;option value=&quot;0&quot;&gt;----- 请选择 -----&lt;/option&gt;');
+
+    if ($(&quot;#province&quot;).val() == 0) {
+        return;
+    }
+
+    $.ajax({
+        &quot;url&quot;:&quot;/districts/&quot;,
+        &quot;data&quot;:&quot;parent=&quot; + $(&quot;#province&quot;).val(),
+        &quot;type&quot;:&quot;GET&quot;,
+        &quot;dataType&quot;:&quot;json&quot;,
+        &quot;success&quot;:function(json) {
+            if (json.state == 200) {
+                var list = json.data;
+                for (var i = 0; i &lt; list.length; i++) {
+                    console.log(list[i].name);
+                    var op = '&lt;option value=&quot;' + list[i].code + '&quot;&gt;' + list[i].name + '&lt;/option&gt;';
+                    $(&quot;#city&quot;).append(op);
+                }
+            } else {
+                alert(json.message);
+            }
+        }
+    });
+}
+
+function showAreaList() {
+    $(&quot;#area&quot;).empty();
+
+    $(&quot;#area&quot;).append('&lt;option value=&quot;0&quot;&gt;----- 请选择 -----&lt;/option&gt;');
+
+    if ($(&quot;#city&quot;).val() == 0) {
+        return;
+    }
+
+    $.ajax({
+        &quot;url&quot;:&quot;/districts/&quot;,
+        &quot;data&quot;:&quot;parent=&quot; + $(&quot;#city&quot;).val(),
+        &quot;type&quot;:&quot;GET&quot;,
+        &quot;dataType&quot;:&quot;json&quot;,
+        &quot;success&quot;:function(json) {
+            if (json.state == 200) {
+                var list = json.data;
+                for (var i = 0; i &lt; list.length; i++) {
+                    console.log(list[i].name);
+                    var op = '&lt;option value=&quot;' + list[i].code + '&quot;&gt;' + list[i].name + '&lt;/option&gt;';
+                    $(&quot;#area&quot;).append(op);
+                }
+            } else {
+                alert(json.message);
+            }
+        }
+    });
+}
+&lt;/script&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+$(&quot;#btn-addnew&quot;).click(function(){
+    $.ajax({
+        &quot;url&quot;:&quot;/addresses/addnew&quot;,
+        &quot;data&quot;:$(&quot;#form-addnew&quot;).serialize(),
+        &quot;type&quot;:&quot;POST&quot;,
+        &quot;dataType&quot;:&quot;json&quot;,
+        &quot;success&quot;:function(json) {
+            if (json.state == 200) {
+                alert(&quot;增加成功！&quot;);
+            } else {
+                alert(json.message);
+            }
+        },
+        &quot;error&quot;:function() {
+            alert(&quot;您的登录信息已经过期，请重新登录！&quot;);
+            location.href = &quot;login.html&quot;;
+        }
+    });
+});
+&lt;/script&gt;
+</code></pre>
+
+<p>后续，为了得到省、市、区的中文名，还应该设计“根据代号得到名称”的功能！则先应该在<code>DistrictMapper</code>持久层接口中添加抽象方法：</p>
+<pre><code>District findByCode(String code);
+</code></pre>
+
+<p>然后配置映射：</p>
+<pre><code>&lt;!-- 根据代号获取省/市/区的信息 --&gt;
+&lt;!-- District findByCode(String code) --&gt;
+&lt;select id=&quot;findByCode&quot;
+    resultType=&quot;cn.tedu.store.entity.District&quot;&gt;
+    SELECT 
+        name
+    FROM 
+        t_dict_district 
+    WHERE 
+        code=#{code}
+&lt;/select&gt;
+</code></pre>
+
+<p>编写并执行单元测试：</p>
+<pre><code>@Test
+public void findByCode() {
+    String code = &quot;320102&quot;;
+    District data = mapper.findByCode(code);
+    System.err.println(data);
+}
+</code></pre>
+
+<p>持久层开发完毕后，再完成业务层，仍然先在业务层接口中添加抽象方法：</p>
+<pre><code>/**
+ * 根据代号获取省/市/区的信息
+ * @param code 省/市/区的代号
+ * @return 匹配的省/市/区的信息，如果没有匹配的信息，则返回null
+ */
+District getByCode(String code);
+</code></pre>
+
+<p>在业务层实现类中实现以上方法：</p>
+<pre><code>@Override
+public District getByCode(String code) {
+    return findByCode(code);
+}
+
+/**
+ * 根据代号获取省/市/区的信息
+ * @param code 省/市/区的代号
+ * @return 匹配的省/市/区的信息，如果没有匹配的信息，则返回null
+ */
+private District findByCode(String code) {
+    return distrctMapper.findByCode(code);
+}
+</code></pre>
+
+<p>最后，编写并执行测试：</p>
+<pre><code>@Test
+public void getByCode() {
+    String code = &quot;330102&quot;;
+    District data = service.getByCode(code);
+    System.err.println(data);
+}
+</code></pre>
+
+<h3>30. 收货地址-显示收货地址列表-持久层</h3>
+<p><strong>1. 分析SQL语句</strong></p>
+<pre><code>SELECT 
+    aid, name, district, address, phone, is_default, tag
+FROM 
+    t_address 
+WHERE 
+    uid=? 
+ORDER BY 
+    is_default DESC, modified_time DESC
+</code></pre>
+
+<p><strong>2. 接口与抽象方法</strong></p>
+<pre><code>List&lt;Address&gt; findByUid(Integer uid);
+</code></pre>
+
+<p><strong>3. 配置映射</strong></p>
+<h3>31. 收货地址-显示收货地址列表-业务层</h3>
+<p><strong>1. 设计异常</strong></p>
+<p>无</p>
+<p><strong>2. 接口与抽象方法</strong></p>
+<pre><code>List&lt;Address&gt; getByUid(Integer uid);
+</code></pre>
+
+<p><strong>3. 实现</strong></p>
+<h3>32. 收货地址-显示收货地址列表-控制器层</h3>
+<p><strong>1. 处理异常</strong></p>
+<p>无</p>
+<p><strong>2. 设计请求</strong></p>
+<pre><code>请求路径：/addresses/
+请求参数：HttpSession session
+请求方式：GET
+响应数据：ResponseResult&lt;List&lt;Address&gt;&gt;
+是否拦截：是
+</code></pre>
+
+<p><strong>3. 处理请求</strong></p>
+<h3>33. 收货地址-显示收货地址列表-界面</h3>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
